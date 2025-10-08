@@ -76,26 +76,6 @@ export const getArticleWithComments = async (req, res) => {
 };
 
 
-// GET ONE ARTICLE
-// export const getArticleById = async (req, res) => {
-//   try {
-//     const result = await pool.query(
-//       `SELECT a.*, u.username AS author
-//        FROM articles a
-//        JOIN users u ON a.user_id = u.id
-//        WHERE a.id = $1`,
-//       [req.params.id]
-//     );
-
-//     if (result.rows.length === 0)
-//       return res.status(404).json({ message: "Article not found" });
-
-//     res.json(result.rows[0]);
-//   } catch (error) {
-//     res.status(500).json({ message: "Server error" });
-//   }
-// };
-
 // UPDATE ARTICLE
 export const updateArticle = async (req, res) => {
   try {
