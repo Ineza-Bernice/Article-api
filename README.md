@@ -29,7 +29,9 @@ npm run dev
 The server will start at http://localhost:4000.
 
 Database Setup
+
 Users Table
+
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
@@ -42,6 +44,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 Articles Table
+
 CREATE TABLE IF NOT EXISTS articles (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -52,6 +55,7 @@ CREATE TABLE IF NOT EXISTS articles (
 );
 
 Comments Table
+
 CREATE TABLE IF NOT EXISTS comments (
     id SERIAL PRIMARY KEY,
     content TEXT NOT NULL,
@@ -62,7 +66,7 @@ CREATE TABLE IF NOT EXISTS comments (
 
 API Endpoints
 User Routes
-Method	Endpoint	Description	Body
+Method |	Endpoint |	Description	Body
 POST	/api/users/register	Register a new user (OTP sent via email)	{ username, email, password }
 POST	/api/users/verify-otp	Verify OTP to activate account	{ email, otp }
 POST	/api/users/login	Login user and get JWT	{ email, password }
@@ -74,6 +78,6 @@ POST	/api/articles	Create a new article	Yes
 PUT	/api/articles/:id	Update your own article	Yes
 DELETE	/api/articles/:id	Delete your own article	Yes
 Comment Routes
-Method	Endpoint	Description	Protected
+Method |	Endpoint |	Description |	Protected
 POST	/api/articles/:id/comments	Add a comment to an article	Yes
 DELETE	/api/articles/:article_id/comments/:comment_id	Delete your own comment	Yes
